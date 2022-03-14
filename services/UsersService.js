@@ -9,14 +9,13 @@ const jwtConfig = {
 };
 
 const serviceCreateUser = async (displayName, email, password, image) => {
-  const users = await User.findAll();
-  const emails = users.map((user) => user.dataValues.email);
+  const found = await User.findOne({ where: { email } });
 
-  if (emails.includes(email)) {
+  if (found) {
     return { code: 409, response: { message: 'User already registered' } };
   }
 
-  const token = jwt.sign({ data: displayName, email, image }, SECRET, jwtConfig);
+  const token = jwt.sign({ data: { displayName, email, image } }, SECRET, jwtConfig);
 
   await User.create({ displayName, email, password, image });
   

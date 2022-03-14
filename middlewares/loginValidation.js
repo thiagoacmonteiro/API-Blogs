@@ -1,12 +1,11 @@
 const Joi = require('joi');
 
 const usersSchema = Joi.object({
-  displayName: Joi.string().min(8).required(),
-  email: Joi.string().email().required(),
-  password: Joi.string().length(6).required(),
-  image: Joi.string(),
+  email: Joi.string().min(1).email().required(),
+  password: Joi.string().min(1).required(),
 }).messages({
   'any.required': '{{#label}} is required',
+  'string.min': '{{#label}} is not allowed to be empty',
 });
 
 module.exports = (req, res, next) => {
