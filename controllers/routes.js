@@ -10,7 +10,8 @@ const usersRouter = express.Router({ mergeParams: true });
 const loginRouter = express.Router({ mergeParams: true });
 
 usersRouter.post('/', usersValidation, usersController.controllerCreateUser);
-usersRouter.get('/', getUserAuth, usersController.controllerGetUser);
+usersRouter.get('/', getUserAuth, usersController.controllerGetAllUsers);
+usersRouter.get('/:id', getUserAuth, usersController.controllerGetUserById);
 
 loginRouter.post('/', loginValidation, loginController.controllerLogin);
 

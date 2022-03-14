@@ -1,9 +1,3 @@
-POST http://localhost:3000/user
+GET http://localhost:3000/user
 Content-Type: application/json
-
-{
-  "displayName": "Brett Wiltshire",
-  "email": "thigoneseira@email.com",
-  "password": "123456",
-  "image": "http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png"
-}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY2FybG9zQGVtYWlsLmNvbSJ9LCJpYXQiOjE2NDcyOTkxNzUsImV4cCI6MTY0NzM4NTU3NX0.VLLttod2kPleMXFax7ygD9FvUX4wLyJh05UmeS3HZ0U

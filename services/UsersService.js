@@ -22,6 +22,17 @@ const serviceCreateUser = async (displayName, email, password, image) => {
   return { code: 201, response: { token } };
 };
 
+const serviceGetUserById = async (id) => {
+  const found = await User.findOne({ where: { id } });
+  
+  if (!found) {
+    return { code: 404, response: { message: 'User does not exist' } };
+  }
+  
+  return { code: 200, response: found };
+};
+
 module.exports = {
   serviceCreateUser,
+  serviceGetUserById,
 };

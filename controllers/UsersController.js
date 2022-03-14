@@ -1,4 +1,4 @@
-const { serviceCreateUser } = require('../services/UsersService');
+const { serviceCreateUser, serviceGetUserById } = require('../services/UsersService');
 const { User } = require('../models');
 
 const controllerCreateUser = async (req, res, next) => {
@@ -12,7 +12,7 @@ const controllerCreateUser = async (req, res, next) => {
   }
 };
 
-const controllerGetUser = async (req, res, next) => {
+const controllerGetAllUsers = async (req, res, next) => {
   try {
     const result = await User.findAll();
 
@@ -22,7 +22,20 @@ const controllerGetUser = async (req, res, next) => {
   }
 };
 
+const controllerGetUserById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const result = await serviceGetUserById(id);
+
+    return res.status(result.code).json(result.response);
+  } catch (e) {
+    next(e);
+  }
+};
+
 module.exports = {
   controllerCreateUser,
-  controllerGetUser,
+  controllerGetAllUsers,
+  controllerGetUserById,
 };
