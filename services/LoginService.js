@@ -4,7 +4,7 @@ const { User } = require('../models');
 const SECRET = 'POST_LOGIN_SECRET';
 
 const jwtConfig = {
-  expiresIn: '15m',
+  expiresIn: '1d',
   algorithm: 'HS256',
 };
 
