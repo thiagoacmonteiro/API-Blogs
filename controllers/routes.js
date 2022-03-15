@@ -22,6 +22,7 @@ loginRouter.post('/', loginValidation, loginController.controllerLogin);
 categoriesRouter.post(
   '/', tokenAuth, categoriesValidation, categoriesController.controllerCreateCategory,
 );
+categoriesRouter.get('/', tokenAuth, categoriesController.controllerGetAllCategories);
 
 module.exports = {
   usersRouter,
