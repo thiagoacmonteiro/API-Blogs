@@ -1,3 +1,7 @@
-GET http://localhost:3000/user
+POST http://localhost:3000/categories
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY2FybG9zQGVtYWlsLmNvbSJ9LCJpYXQiOjE2NDcyOTkxNzUsImV4cCI6MTY0NzM4NTU3NX0.VLLttod2kPleMXFax7ygD9FvUX4wLyJh05UmeS3HZ0U
+
+{
+  "name": "Inovação"
+}
