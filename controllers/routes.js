@@ -29,6 +29,7 @@ categoriesRouter.post(
 categoriesRouter.get('/', tokenAuth, categoriesController.controllerGetAllCategories);
 
 postsRouter.post('/', tokenAuth, postsValidation, postsController.controllerCreatePost);
+postsRouter.get('/', tokenAuth, postsController.controllerGetAllPosts);
 
 module.exports = {
   usersRouter,
