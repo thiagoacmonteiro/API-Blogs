@@ -9,9 +9,13 @@ const loginController = require('./LoginController');
 const categoriesValidation = require('../middlewares/categoriesValidation');
 const categoriesController = require('./CategoriesController');
 
+const postsValidation = require('../middlewares/postsValidation');
+const postsController = require('./PostsController');
+
 const usersRouter = express.Router({ mergeParams: true });
 const loginRouter = express.Router({ mergeParams: true });
 const categoriesRouter = express.Router({ mergeParams: true });
+const postsRouter = express.Router({ mergeParams: true });
 
 usersRouter.post('/', usersValidation, usersController.controllerCreateUser);
 usersRouter.get('/', tokenAuth, usersController.controllerGetAllUsers);
@@ -24,8 +28,11 @@ categoriesRouter.post(
 );
 categoriesRouter.get('/', tokenAuth, categoriesController.controllerGetAllCategories);
 
+postsRouter.post('/', tokenAuth, postsValidation, postsController.controllerCreatePost);
+
 module.exports = {
   usersRouter,
   loginRouter,
   categoriesRouter,
+  postsRouter,
 };

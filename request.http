@@ -1,7 +1,9 @@
-POST http://localhost:3000/categories
+POST http://localhost:3000/post
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY2FybG9zQGVtYWlsLmNvbSJ9LCJpYXQiOjE2NDcyOTkxNzUsImV4cCI6MTY0NzM4NTU3NX0.VLLttod2kPleMXFax7ygD9FvUX4wLyJh05UmeS3HZ0U
+Authorization: yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY2FybG9zQGVtYWlsLmNvbSJ9LCJpYXQiOjE2NDcyOTkxNzUsImV4cCI6MTY0NzM4NTU3NX0.VLLttod2kPleMXFax7ygD9FvUX4wLyJh05UmeS3HZ0U
 
 {
-  "name": "Inovação"
+  "title": "Latest updates, August 1st",
+  "content": "The whole text for the blog post goes here in this key",
+  "categoryIds": [1, 2]
 }

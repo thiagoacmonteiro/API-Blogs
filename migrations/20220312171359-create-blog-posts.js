@@ -18,10 +18,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       published: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.DATE,
       },
       updated: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.DATE,
       }
     });
   },

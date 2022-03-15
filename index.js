@@ -16,5 +16,6 @@ app.get('/', (request, response) => {
 app.use('/user', router.usersRouter);
 app.use('/login', router.loginRouter);
 app.use('/categories', router.categoriesRouter);
+app.use('/post', router.postsRouter);
 
 app.listen(3000, () => console.log('ouvindo porta 3000!'));
